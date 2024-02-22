@@ -49,7 +49,7 @@ export default function Profile() {
       <input onChange={(e)=>setFile(e.target.files[0])} type="file" ref={fileRef}  hidden accept='image/*'/>
         <img onClick={()=>fileRef.current.click()}
         className=' rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2  '
-        src= {formData.downloadURL || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"}   alt=" profile image" />
+        src= {formData.avatar || currentUser.avatar}   alt=" profile image" />
         <p className=' text-sm self-center'>
           {fileUploadError ?
          ( <span className=' text-red-700'>
