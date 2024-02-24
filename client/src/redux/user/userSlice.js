@@ -49,8 +49,20 @@ deleteUserFailure :(state , action) =>{
     state.error=action.payload;
     state.error = false;    
 },
+signOutUserStart : (state) =>{
+    state.loading = true;
+},
+singOutUserSuccess  : (state) =>{
+   state.currentUser= null;
+   state.loading=false;
+   state.error=null;
+},
+singOutUserFailure :(state , action) =>{
+   state.error=action.payload;
+   state.error = false;    
+},
     }
 });
-export const { signInStart , signInSuccess, signInFailure , updateUserFailure, updateUserStart , updateUserSuccess , deleteUserFailure , deleteUserStart , deleteUserSuccess} = userSlice.actions;
+export const { signInStart , signInSuccess, signInFailure , updateUserFailure, updateUserStart , updateUserSuccess , deleteUserFailure , deleteUserStart , deleteUserSuccess , signOutUserStart, singOutUserFailure,singOutUserSuccess} = userSlice.actions;
 
 export default userSlice.reducer;
